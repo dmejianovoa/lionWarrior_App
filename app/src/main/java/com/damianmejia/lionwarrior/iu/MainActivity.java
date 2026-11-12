@@ -1,4 +1,4 @@
-package com.damianmejia.lionwarrior;
+package com.damianmejia.lionwarrior.iu;
 
 import android.os.Bundle;
 
