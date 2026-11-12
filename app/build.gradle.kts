@@ -40,7 +40,18 @@ dependencies {
     implementation(libs.appcompat)
     implementation(libs.constraintlayout)
     implementation(libs.material)
+
+    // Retrofit: cliente HTTP para consumir la API REST
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    // Convierte el JSON de la API a objetos Java (y viceversa) con Gson
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
+    // Muestra en el Logcat las peticiones y respuestas (útil para depurar)
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+    // Mockito: simular dependencias en las pruebas unitarias
+        testImplementation("org.mockito:mockito-core:5.14.2")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(libs.ext.junit)
+
 }
