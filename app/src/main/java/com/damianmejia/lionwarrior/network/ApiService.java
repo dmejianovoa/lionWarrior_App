@@ -2,6 +2,7 @@ package com.damianmejia.lionwarrior.network;
 
 import com.damianmejia.lionwarrior.model.LoginRequest;
 import com.damianmejia.lionwarrior.model.AuthResponse;
+import com.damianmejia.lionwarrior.model.RegisterRequest;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -13,4 +14,8 @@ public interface ApiService {
     // POST /api/auth/login -> envia email y password, recibe AuthResponse
     @POST("api/auth/login")
     Call<AuthResponse> login(@Body LoginRequest request);
+
+    // POST /api/auth/register -> envia los datos del cliente, recibe mensaje (201 0 409)
+    @POST("api/auth/register")
+    Call<AuthResponse> register(@Body RegisterRequest request);
 }
