@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">LionWarrior</string>
+    <string name="welcome_title">Lion Warrior Company</string>
+    <string name="welcome_subtitle">Agenda tu cita y descubre nuestros servicios</string>
+    <string name="btn_login">Iniciar sesión</string>
+    <string name="btn_register">Registrarse</string>
+    <string name="logo_description">Logo de Lion Warrior Company</string>
 </resources>
