@@ -16,4 +16,18 @@
     <string name="error_email">Ingresa un correo válido</string>
     <string name="error_password_empty">Ingresa tu contraseña</string>
     <string name="error_only_clients">Esta app es solo para clientes</string>
+
+    //RegisterActivity
+    <string name="register_title">Crear cuenta</string>
+    <string name="hint_name">Nombre</string>
+    <string name="hint_lastname">Apellido</string>
+    <string name="hint_phone">Teléfono (300 000 0000)</string>
+    <string name="hint_confirm_password">Confirmar contraseña</string>
+    <string name="link_go_login">¿Ya tienes cuenta? Inicia sesión</string>
+    <string name="error_name">Ingresa tu nombre</string>
+    <string name="error_lastname">Ingresa tu apellido</string>
+    <string name="error_phone">Usa el formato 300 000 0000</string>
+    <string name="error_password_rules">Mínimo 8 caracteres, con al menos una letra y un número</string>
+    <string name="error_password_match">Las contraseñas no coinciden</string>
+    <string name="register_success">Registro exitoso. Ahora inicia sesión</string>
 </resources>
