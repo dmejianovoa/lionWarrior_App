@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
 
         btnLogin.setOnClickListener(v -> attemptLogin());
         // TODO: abrir RegisterActivity (siguiente paso)
-        tvGoRegister.setOnClickListener(v -> { });
+        tvGoRegister.setOnClickListener(v -> goToRegister());
     }
 
     // Valida los campos y, si están bien, llama a la API
@@ -100,6 +100,14 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(LoginActivity.this, message, Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    // Abre el register reutilizando la pantalla si ya estaba abierta, y cierra el login
+    private void goToRegister() {
+        Intent intent = new Intent(this, RegisterActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        startActivity(intent);
+        finish();
     }
 
     // Muestra u oculta el indicador de carga y bloquea el botón para evitar doble envío

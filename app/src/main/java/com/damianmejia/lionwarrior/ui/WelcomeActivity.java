@@ -31,6 +31,6 @@ public class WelcomeActivity extends AppCompatActivity {
 
         // TODO: abrir LoginActivity y RegisterActivity (siguientes pasos)
         btnGoLogin.setOnClickListener(v -> startActivity(new Intent(this, LoginActivity.class)));
-        btnGoRegister.setOnClickListener(v -> { });
+        btnGoRegister.setOnClickListener(v -> startActivity(new Intent(this, RegisterActivity.class)));
     }
 }
