@@ -30,7 +30,7 @@ public class WelcomeActivity extends AppCompatActivity {
         Button btnGoRegister = findViewById(R.id.btnGoRegister);
 
         // TODO: abrir LoginActivity y RegisterActivity (siguientes pasos)
-        btnGoLogin.setOnClickListener(v -> { });
+        btnGoLogin.setOnClickListener(v -> startActivity(new Intent(this, LoginActivity.class)));
         btnGoRegister.setOnClickListener(v -> { });
     }
 }

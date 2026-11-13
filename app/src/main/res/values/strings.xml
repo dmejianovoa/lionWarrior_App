@@ -1,7 +1,19 @@
 <resources>
+
+    //WelcomeActivity
     <string name="welcome_title">Lion Warrior Company</string>
+    <string name="app_name">LionWarrior</string>
     <string name="welcome_subtitle">Agenda tu cita y descubre nuestros servicios</string>
     <string name="btn_login">Iniciar sesión</string>
     <string name="btn_register">Registrarse</string>
     <string name="logo_description">Logo de Lion Warrior Company</string>
+
+    //LoginActivity
+    <string name="login_title">Iniciar sesión</string>
+    <string name="hint_email">Correo electrónico</string>
+    <string name="hint_password">Contraseña</string>
+    <string name="link_go_register">¿No tienes cuenta? Regístrate</string>
+    <string name="error_email">Ingresa un correo válido</string>
+    <string name="error_password_empty">Ingresa tu contraseña</string>
+    <string name="error_only_clients">Esta app es solo para clientes</string>
 </resources>
