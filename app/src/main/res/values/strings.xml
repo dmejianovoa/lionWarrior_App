@@ -52,4 +52,12 @@
     <string name="logout_confirm_message">¿Seguro que quieres cerrar sesión?</string>
     <string name="btn_cancel">Cancelar</string>
     <string name="profile_updated">Perfil actualizado</string>
+
+    //FragmentAppointments
+    <string name="appointments_title">Mis citas</string>
+    <string name="appointments_empty">Aún no tienes citas agendadas</string>
+    <string name="status_pending">Pendiente</string>
+    <string name="status_confirmed">Confirmada</string>
+    <string name="status_completed">Completada</string>
+    <string name="status_cancelled">Cancelada</string>
 </resources>
