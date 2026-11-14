@@ -39,4 +39,8 @@
 
     //FragmentService
     <string name="services_title">Nuestros servicios</string>
+
+    //FragmentBarber
+    <string name="barbers_title"> Nuestros barberos</string>
+    <string name="barbers_empty"> Por ahora no hay barberos disponibles </string>
 </resources>
