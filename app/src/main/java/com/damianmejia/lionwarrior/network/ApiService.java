@@ -1,5 +1,6 @@
 package com.damianmejia.lionwarrior.network;
 
+import com.damianmejia.lionwarrior.model.Appointment;
 import com.damianmejia.lionwarrior.model.Barber;
 import com.damianmejia.lionwarrior.model.LoginRequest;
 import com.damianmejia.lionwarrior.model.AuthResponse;
@@ -16,6 +17,7 @@ import retrofit2.http.POST;
 import retrofit2.http.GET;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 //Define los endpoints que consume la APP
 public interface ApiService {
@@ -43,4 +45,8 @@ public interface ApiService {
     // PUT /api/users/{id} → actualiza el perfil y devuelve el usuario actualizado
     @PUT("api/users/{id}")
     Call<User> updateUser(@Path("id") int idUser, @Body UpdateUserRequest request);
+
+    // GET /api/appointments?idUser={id} → citas de un cliente
+    @GET("api/appointments")
+    Call<List<Appointment>> getAppointments(@Query("idUser") int idUser);
 }
