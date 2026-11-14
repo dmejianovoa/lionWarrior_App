@@ -1,5 +1,6 @@
 package com.damianmejia.lionwarrior.network;
 
+import com.damianmejia.lionwarrior.model.Barbers;
 import com.damianmejia.lionwarrior.model.LoginRequest;
 import com.damianmejia.lionwarrior.model.AuthResponse;
 import com.damianmejia.lionwarrior.model.RegisterRequest;
@@ -26,4 +27,8 @@ public interface ApiService {
     // GET /api/services → lista de servicios de la barbería
     @GET("api/services")
     Call<List<Service>> getServices();
+
+    // GET /api/barbers → lista de barberos
+    @GET("api/barbers")
+    Call<List<Barbers>> getBarbers();
 }
