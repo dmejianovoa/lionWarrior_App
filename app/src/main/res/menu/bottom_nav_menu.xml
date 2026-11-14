@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Opciones de la barra de navegación inferior -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_services"
+        android:icon="@drawable/ic_services_cut_24"
+        android:title="@string/nav_services" />
+    <item
+        android:id="@+id/nav_barbers"
+        android:icon="@drawable/ic_barbers_group_24"
+        android:title="@string/nav_barbers" />
+    <item
+        android:id="@+id/nav_appointments"
+        android:icon="@drawable/ic_appointments_article_24"
+        android:title="@string/nav_appointments" />
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/ic_profile_account_circle_24"
+        android:title="@string/nav_profile" />
+</menu>
