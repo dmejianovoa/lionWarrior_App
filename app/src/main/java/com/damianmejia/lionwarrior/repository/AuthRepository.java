@@ -5,9 +5,8 @@ import com.damianmejia.lionwarrior.model.LoginRequest;
 import com.damianmejia.lionwarrior.model.RegisterRequest;
 import com.damianmejia.lionwarrior.network.ApiService;
 import com.damianmejia.lionwarrior.network.RetrofitClient;
-import com.google.gson.Gson;
+import com.damianmejia.lionwarrior.util.ApiErrorParser;
 
-import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -17,56 +16,46 @@ public class AuthRepository {
 
     private final ApiService apiService;
 
-    //Constructor normal: usa el cliente real Retrofit real (Singleton)
+    // Constructor normal: usa el cliente Retrofit real (Singleton)
     public AuthRepository() {
         this.apiService = RetrofitClient.getApiService();
     }
 
-    // Iniciar sesion con correo y contraseña
+    // Constructor para pruebas unitarias con un ApiService simulado (Mockito)
+    public AuthRepository(ApiService apiService) {
+        this.apiService = apiService;
+    }
+
+    // Inicia sesión con correo y contraseña
     public void login(String email, String password, AuthCallback callback) {
         LoginRequest request = new LoginRequest(email, password);
-        apiService.login(request).enqueue(buildCallBack(callback));
+        apiService.login(request).enqueue(buildCallback(callback));
     }
 
-    //Registra un nuevo cliente
+    // Registra un nuevo cliente
     public void register(RegisterRequest request, AuthCallback callback) {
-        apiService.register(request).enqueue(buildCallBack(callback));
+        apiService.register(request).enqueue(buildCallback(callback));
     }
 
-    //Convierte la respuesta de Retrofit en el resultado simple: exito o error
-    private Callback<AuthResponse> buildCallBack(AuthCallback callback) {
+    // Convierte la respuesta de Retrofit en un resultado simple: éxito o error
+    private Callback<AuthResponse> buildCallback(AuthCallback callback) {
         return new Callback<AuthResponse>() {
             @Override
             public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
-                    //Codigos 2xx : Exito
+                    // Códigos 2xx: éxito
                     callback.onSuccess(response.body());
                 } else {
-                    // Codigos de error 4xx : se extrae el mensaje de la API
-                    callback.onError(parseErrorMessage(response));
+                    // Códigos 4xx/5xx: se extrae el mensaje que envía la API
+                    callback.onError(ApiErrorParser.parse(response));
                 }
             }
 
             @Override
             public void onFailure(Call<AuthResponse> call, Throwable t) {
-                // No hubo respuesta: Sin internet, timeout o servidor caido
-                callback.onError("No se pudo conectar con el servidor. Revisa tu conexion e intentalo de nuevo");
+                // No hubo respuesta: sin internet, timeout o servidor caído
+                callback.onError("No se pudo conectar con el servidor. Revisa tu conexión e inténtalo de nuevo.");
             }
         };
-    }
-
-    // Lee el JSON de error (errorBody) y extrae el campo "mensaje"
-    private String parseErrorMessage(Response<?> response) {
-        try (ResponseBody errorBody = response.errorBody()) {
-            if (errorBody != null) {
-                AuthResponse error = new Gson().fromJson(errorBody.charStream(), AuthResponse.class);
-                if (error != null && error.getMessage() != null) {
-                    return error.getMessage();
-                }
-            }
-        } catch (Exception e) {
-            //El error no vino en el formato esperado
-        }
-        return "Ocurrio un error inesperado (Codigo" + response.code() + ").";
     }
 }
