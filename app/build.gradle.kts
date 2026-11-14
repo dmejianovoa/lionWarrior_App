@@ -10,6 +10,10 @@ android {
         }
     }
 
+    buildFeatures {
+        buildConfig = true
+    }
+
     defaultConfig {
         applicationId = "com.damianmejia.lionwarrior"
         minSdk = 24
