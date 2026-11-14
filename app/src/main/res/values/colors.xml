@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Colores de la plantilla -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Colores de marca Lion Warrior: negro y dorado -->
+    <color name="lw_gold">#D4A537</color>
+    <color name="lw_gold_dark">#A67C1E</color>
+    <color name="lw_black">#0A0A0A</color>
+    <color name="lw_surface">#141414</color>
+    <color name="lw_surface_card">#1C1C1C</color>
+    <color name="lw_text">#F5F5F5</color>
+    <color name="lw_text_secondary">#BDBDBD</color>
+    <color name="lw_outline">#5C5C5C</color>
 </resources>

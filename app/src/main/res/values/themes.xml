@@ -1,8 +1,25 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.LionWarrior" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <!-- Tema de la app: siempre oscuro, con los colores de marca (negro y dorado) -->
+    <style name="Base.Theme.LionWarrior" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Color principal: botones, campo activo, pestaña seleccionada -->
+        <item name="colorPrimary">@color/lw_gold</item>
+        <item name="colorOnPrimary">@color/lw_black</item>
+        <item name="colorPrimaryContainer">@color/lw_gold_dark</item>
+        <item name="colorOnPrimaryContainer">@color/lw_black</item>
+        <item name="colorSecondaryContainer">@color/lw_gold_dark</item>
+        <item name="colorOnSecondaryContainer">@color/lw_black</item>
+
+        <!-- Fondos -->
+        <item name="android:colorBackground">@color/lw_black</item>
+        <item name="colorSurface">@color/lw_black</item>
+        <item name="colorSurfaceContainer">@color/lw_surface</item>
+        <item name="colorSurfaceContainerLow">@color/lw_surface_card</item>
+        <item name="colorSurfaceContainerHighest">@color/lw_surface_card</item>
+
+        <!-- Textos y bordes -->
+        <item name="colorOnSurface">@color/lw_text</item>
+        <item name="colorOnSurfaceVariant">@color/lw_text_secondary</item>
+        <item name="colorOutline">@color/lw_outline</item>
     </style>
 
     <style name="Theme.LionWarrior" parent="Base.Theme.LionWarrior" />
