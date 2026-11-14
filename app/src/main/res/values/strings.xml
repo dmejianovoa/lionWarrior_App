@@ -36,4 +36,7 @@
     <string name="nav_barbers">Barberos</string>
     <string name="nav_appointments">Mis citas</string>
     <string name="nav_profile">Perfil</string>
+
+    //FragmentService
+    <string name="services_title">Nuestros servicios</string>
 </resources>
