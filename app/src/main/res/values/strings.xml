@@ -43,4 +43,13 @@
     //FragmentBarber
     <string name="barbers_title"> Nuestros barberos</string>
     <string name="barbers_empty"> Por ahora no hay barberos disponibles </string>
+
+    //FragmentProfile
+    <string name="profile_title">Mi perfil</string>
+    <string name="btn_save">Guardar cambios</string>
+    <string name="btn_logout">Cerrar sesión</string>
+    <string name="logout_confirm_title">Cerrar sesión</string>
+    <string name="logout_confirm_message">¿Seguro que quieres cerrar sesión?</string>
+    <string name="btn_cancel">Cancelar</string>
+    <string name="profile_updated">Perfil actualizado</string>
 </resources>
