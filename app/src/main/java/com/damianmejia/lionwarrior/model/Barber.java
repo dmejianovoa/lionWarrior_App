@@ -2,7 +2,7 @@ package com.damianmejia.lionwarrior.model;
 
 
 // Representa un barbero tal como lo devuelve la API
-public class Barbers {
+public class Barber {
     private int idBarber;
     private int idUser;
     private String userName;
